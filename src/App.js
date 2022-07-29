@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Layer, Stage } from "react-konva";
 import { Html } from "react-konva-utils";
 import Floorplan from "./components/Floorplan";
+import Position from "./components/Position";
 import SVGFurniture from "./components/SVGFurniture";
 import floorplan from "./test-resources/floorplan-sample.json";
 
@@ -57,6 +58,15 @@ function App() {
         >
           +
         </button>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "30px",
+          left: "30px",
+        }}
+      >
+        <Position elements={elements} selectedId={selectedId} />
       </div>
       <Stage
         width={window.innerWidth}
