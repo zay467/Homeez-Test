@@ -13,8 +13,8 @@ function App() {
     setElements([
       ...elements,
       {
-        x: 150,
-        y: 150,
+        x: 150 + elements.length,
+        y: 150 + elements.length,
         width: 100,
         height: 100,
         id: `element-${elements.length}`,
@@ -69,13 +69,16 @@ function App() {
             divProps={{
               style: {
                 position: "absolute",
-                top: "10px",
-                left: "10px",
+                left: "25%",
+                top: "10%",
                 zIndex: -10,
               },
             }}
           >
-            <Floorplan width="500px" floorplan={floorplan.layout} />
+            <Floorplan
+              width={`${window.innerWidth / 2}px`}
+              floorplan={floorplan.layout}
+            />
           </Html>
           {elements.map((rect, i) => {
             return (
